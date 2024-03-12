@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGRULTURE DECISION SUPPORT SYSTEM</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    body {
+      background-image: url('https://i.pinimg.com/originals/a2/7f/f7/a27ff77ae35670691cdd0c8f2c922caa.jpg');
+     
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  </style>
+  
+  <style>
+.social-buttons {
+    display: inline-block;
+    background: transparent;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 10px;
+    /* Helper class to divide the icons */
+  }
+  .social-buttons .social-margin {
+    margin-right: 15px;
+  }
+  .social-buttons a,
+  .social-buttons a:hover,
+  .social-buttons a:focus,
+  .social-buttons a:active {
+    text-decoration: none;
+  }
+  .social-buttons .social-icon {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    -moz-border-radius: 138px;
+    -webkit-border-radius: 138px;
+    border-radius: 138px;
+    border: 5px solid;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 1px;
+    padding-top: 11px;
+    transition: all 0.5s;
+    /* Facebook Button Styling */
+    /* Twitter Button Styling */
+    /* Google+ Button Styling */
+    /* Linkedin Button Styling */
+    /* Pinterest Button Styling */
+    /* Behance Button Styling */
+    /* Github Button Styling */
+    /* Youtube Button Styling */
+    /* Soundcloud Button Styling */
+  }
+  .social-buttons .social-icon:hover {
+    transform: rotate(360deg) scale(1.3);
+  }
+  
+  .social-buttons .social-icon.twitter {
+    font-size: 22px;
+    padding-top: 10px;
+    padding-left: 2px;
+    border-color: #55acee;
+    background-color: #55acee;
+    color: #ffffff;
+  }
+  .social-buttons .social-icon.twitter:hover {
+    background-color: #ffffff;
+    color: #55acee;
+  }
+  
+  .social-buttons .social-icon.linkedin {
+    font-size: 24px;
+    padding-top: 8px;
+    padding-left: 1px;
+    background-color: #0976b4;
+    color: #ffffff;
+    border-color: #0976b4;
+  }
+  .social-buttons .social-icon.linkedin:hover {
+    background-color: #ffffff;
+    color: #0976b4;
+  }
+  .social-buttons .social-icon.instagram {
+    font-size: 22px;
+    padding-top: 9px;
+    background-color: #cb2027;
+    color: #ffffff;
+    border-color: #cb2027;
+  }
+  .social-buttons .social-icon.instagram:hover {
+    background-color: #ffffff;
+    color: #cb2027;
+  }
+  
+  .social-buttons .social-icon.github {
+    font-size: 22px;
+    padding-top: 9px;
+    background-color: #4183c4;
+    color: #ffffff;
+    border-color: #4183c4;
+  }
+  .social-buttons .social-icon.github:hover {
+    background-color: #ffffff;
+    color: #4183c4;
+  }
+  .center-images {
+    text-align: center;}
+       
+ </style>
+ <style>
+  * {
+    box-sizing: border-box
+  }
+  body {
+    font-family: Verdana, sans-serif;
+    margin: 0
+  }
+  .mySlides {
+    display: none
+  }
+  img {
+    vertical-align: middle;
+  }
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  /* Caption text */
+  .slidetext {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #999999;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active,
+  .dot:hover {
+    background-color: #111111;
+  }
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 30s;
+    animation-name: fade;
+    animation-duration: 30s;
+  }
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: .8
+    }
+    to {
+      opacity: 1
+    }
+  }
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px
+    }
+  }
+</style>
+ </head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner-->
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+             
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#banner"><b>Home</b></a></li>
+                <li class=""><a href="#service"><b>Services</b></a></li>
+                <li class=""><a href="#about"><b>About</b></a></li>
+                <li class=""><a href="faq.html"><b>FAQ</b></a></li>
+                <li class=""><a href="#contact"><b>Contact</b></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          
+            
+          <div class="banner-text text-center" style="margin-top: 200px;"><br><br>
+            <b><h3 class="title" style="color: #ea0909; font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-transform: capitalize; margin-bottom: 20px;">Agricultural Decision Support System: Empowering Farmers</h3>
+            </b><p class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;">The Agricultural Decision Support System is a comprehensive platform designed to assist farmers in making informed decisions regarding crop management, resource allocation, and risk mitigation. By leveraging advanced technologies such as data analytics, machine learning, and remote sensing, this system provides valuable insights and recommendations to optimize agricultural practices and maximize yields.</p>
+          </div>
+          
+            
+ 
+  <!--/ banner-->
+ 
+
+  <div class="container">
+    <div class="post center-images">
+<br> <br>
+<div class="image-container">
+  <img src="https://techbaji.com/wp-content/uploads/2020/03/How-AI-is-Transforming-Agriculture.jpg" alt="" class="image">
+</div>
+<p class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;">In India, where agriculture is the backbone of the economy, farmers often struggle with traditional farming practices that lead to suboptimal crop yields and environmental degradation. This necessitates a paradigm shift towards precision agriculture. Our Agricultural Decision Support System (ADSS) leverages advanced machine learning algorithms to address these challenges. By analyzing soil content and weather parameters, including temperature, humidity, pH, and rainfall, our system provides personalized recommendations for crop selection and fertilizer usage. Through the adoption of our system, farmers can diversify crops, enhance yield, thereby ensuring the long-term sustainability of agricultural practices. Hence, by utilizing our system farmers can cultivate a new variety of crop, may increase in profit margin, and can avoid soil pollution.</p>
+<div class="highlight"><BR>
+  <h2 class="text" style="color: #930564; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;">Existing Challenges in Traditional Agriculture</h2><BR>
+  <p class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;">Traditional agricultural practices in India are hindered by several shortcomings, impeding the productivity and sustainability of farming operations. One significant drawback is the prevalent reliance on age-old techniques, neglecting the integration of modern technological advancements. Consequently, farmers encounter the following challenges:</p>
+  <ol><BR>
+    <li class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;"><strong>High Operational Costs:</strong> Traditional farming methods entail substantial expenses associated with labor, equipment, and agricultural inputs like seeds and fertilizers. These costs often prove prohibitive for small-scale farmers, constraining their ability to embrace new technologies or invest in quality agricultural resources.</li>
+    <li class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;"><strong>Limited Access to Knowledge:</strong> Many farmers lack timely and accurate information concerning soil health, weather patterns, crop diseases, and effective pest management strategies. Without access to such critical insights, farmers struggle to make informed decisions regarding crop selection, planting schedules, and optimal agronomic practices.</li>
+    <li class="text" style="color: #010c14; font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; text-align: justify;"><strong>Environmental Degradation:</strong> Traditional farming methods often contribute to environmental degradation, including soil erosion, depletion of natural resources, and water pollution due to excessive utilization of chemical fertilizers and pesticides. These unsustainable practices not only jeopardize the long-term health of agricultural land but also pose significant risks to human health and biodiversity.</li>
+  </ol>
+</div>
+</div>
+</div>
+
+<!-- Benefits Section -->
+<section id="benefits" class="section-padding">
+  <div class="container">
+    <h2 class="ben-title text-center">Benefits</h2>
+    <hr class="botm-line">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-line-chart"></i>
+          </div>
+          <h4>Maximized Yield and Profitability</h4>
+          <p>Empowers farmers to achieve maximum crop yields and profitability by making informed decisions based on accurate data and tailored recommendations.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-dollar"></i>
+          </div>
+          <h4>Cost Reduction and Sustainability</h4>
+          <p>Reduces input costs and promotes environmental sustainability by optimizing resource usage, minimizing waste, and adopting eco-friendly farming practices.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-tasks"></i>
+          </div>
+          <h4>Improved Resource Allocation</h4>
+          <p>Optimizes the allocation of resources such as water, fertilizers, and pesticides, leading to efficient use and significant savings for farmers.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-exclamation-triangle"></i>
+          </div>
+          <h4>Enhanced Risk Management</h4>
+          <p>Minimizes the risk of crop failure and financial losses by providing early warning alerts for potential pest outbreaks, diseases, and adverse weather conditions.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h4>Empowerment of Small-Scale Farmers</h4>
+          <p>Empowers small-scale farmers with access to advanced technologies and expert insights, enabling them to compete effectively in the market and improve their livelihoods.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit-info text-center">
+          <div class="icon">
+            <i class="fa fa-line-chart"></i>
+          </div>
+          <h4>Increased Market Competitiveness</h4>
+          <p>Enhances the competitiveness of farmers in the market by providing valuable market analysis and trend forecasts, enabling them to make informed decisions and adapt their strategies accordingly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Benefits Section -->
+
+
+
+          <h3 class="title" style="text-align: center;">SYSTEM ARCHITECTURE DIAGRAM.</h3>
+          <div style="text-align: center;">
+            <img src="img\sys architecture.png" alt="" class="center" width="600" height="400">
+        </div>
+        <br>
+    <div style="text-align: center;">
+        <h2>Use Case Diagram</h2><br>
+        <img src="img/usecase.jpg" alt="Use Case Diagram" class="center" width="600" height="600">
+    </div>
+
+    <!-- Class Diagram -->
+    <br>
+    <div style="text-align: center;">
+        <h2>Class Diagram</h2><br>
+        <img src="img/class.jpg" alt="Class Diagram" class="center" width="500" height="400">
+    </div>
+
+    <!-- Sequence Diagram -->
+    <br>
+    <div style="text-align: center;">
+        <h2>Sequence Diagram</h2><br>
+        <img src="img/sequence.jpg" alt="Sequence Diagram" class="center" width="600" height="400">
+    </div>
+
+    <!-- Activity Diagram -->
+    <br>
+    <div style="text-align: center;">
+        <h2>Activity Diagram</h2><br>
+        <img src="img/activity.jpg" alt="Activity Diagram" class="center" width="600" height="400">
+    </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <br><br><br></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+  <!-- Main content section -->
+  <section id="content" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">Modules</h2>
+            <hr class="botm-line">
+          </div>
+          <div class="module-content">
+            <ul>
+              <li><strong>Data Preprocessing:</strong> After collecting datasets from various resources, preprocessing is necessary before model training. This involves stages such as reading the dataset, data cleaning (removing redundant attributes and handling missing values).</li>
+              <li><strong>Machine Learning Algorithm for Prediction:</strong> Utilizes predictive algorithms to estimate likely outcomes based on trained data. Supervised machine learning algorithms, including classification and regression, are employed.</li>
+              
+                <li><strong>Crop Yield Prediction:</strong> Utilizes Gradient Boosting algorithm.</li>
+                <li><strong>Crop Recommendation:</strong> Employs SVM algorithm.</li>
+                <li><strong>Fertilizer Recommendation:</strong> Utilizes Random Forest algorithm.</li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <h3 class="title" style="text-align: center;"><b>INTERFACE</b></h3>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-2024-03-11-23_11_04.png" style="width:100%"><br><br><br><br>
+      <div class="slidetext"  style="color: black;"><b>Login Interface</b></div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-signin-2024-03-11-23_12_05.png" style="width:100%"><br><br><br><br>
+      <div class="slidetext" style="color: black;"><b>Crop yield Prediction</b></div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-index-2024-03-11-23_13_08.png" style="width:100%"><br><br><br>
+      <div class="slidetext" style="color: black;">Result for Crop Yield Prediction</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-index1-2024-03-11-23_12_32.png" style="width:100%"><br><br><br>
+      <div class="slidetext" style="color: black;">Crop Recommendation System</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-index1-2024-03-11-23_13_48.png" style="width:100%"><br><br><br><br>
+      <div class="slidetext" style="color: black;">Result for Crop Recommendation</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 6</div>
+      <img src="img/screencapture-127-0-0-1-5000-fertilizer-2024-03-11-23_14_33.png" style="width:100%"><br><br><br><br>
+      
+      <div class="slidetext" style="color: black;">Fertilizer recommendation</div>
+    </div>
+  
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/bullets/indicators -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
+  
+  <!-- Our Services -->
+<section id="service" class="section-padding">
+  <div class="container">
+    <h2 class="ser-title text-center">Our Services</h2>
+    <hr class="botm-line">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="service-info text-center">
+          <div class="icon">
+            <i class="fa fa-line-chart"></i>
+          </div>
+          <h4>Precision Crop Yield Prediction</h4>
+          <p>Forecasting crop yields based on historical data, weather patterns, and soil conditions to assist farmers in planning and decision-making.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-info text-center">
+          <div class="icon">
+            <i class="fa fa-leaf"></i>
+          </div>
+          <h4>Customized Crop Recommendations</h4>
+          <p>Providing tailored crop recommendations considering soil quality, climate, and market demand, ensuring optimal crop selection for each farm.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-info text-center">
+          <div class="icon">
+            <i class="fa fa-flask"></i>
+          </div>
+          <h4>Data-Driven Fertilizer Optimization</h4>
+          <p>Offering personalized fertilizer recommendations based on soil nutrient analysis and crop requirements, enhancing crop growth and sustainability.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="service-info text-center">
+          <div class="icon">
+            <i class="fa fa-users"></i>
+          </div>
+          <h4>Farmer Empowerment</h4>
+          <p>Empowering farmers with access to cutting-edge technologies and expert insights to optimize agricultural practices, improve productivity, and enhance their livelihoods.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Our Services -->
+
+ 
+
+
+<!--cta 2-->
+<section id="cta-2" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="text-right-md col-md-4 col-sm-4">
+        <h2 class="section-title white lg-line">« A few words<br> about us »</h2>
+      </div>
+      <div class="col-md-4 col-sm-5">
+        <p style="font-family: 'Modern No. 20', cursive;">
+          <b>We are a dedicated team of final-year Computer Science and Artificial Intelligence (AI) students, passionate about leveraging cutting-edge technology to address critical healthcare challenges. Our mission is to contribute to the global efforts in disease detection and prevention, with a primary focus on monkeypox.</b>
+        </p>  
+       
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section><BR><BR>
+<div style="text-align: center;">
+  <iframe src="https://drive.google.com/file/d/16JxUirHrideve9BN7OOCXjvxM-0uTwA4/preview" width="640" height="480"></iframe>
+</div>
+  <!--cta-->
+  <!--contact-->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Contact us</h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <h3>Contact Info</h3>
+          <div class="space"></div>
+          <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>SR UNIVERSITY,ANANTHASAGAR<br> India, 506001</p>
+          <div class="space"></div>
+          <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>2003a52127@sru.edu.in</p>
+          <div class="space"></div>
+          <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+91 7794819038</p>
+        </div>
+        <div class="col-md-8 col-sm-8 marb20">
+          <div class="contact-info">
+            <h3 class="cnt-ttl">Having Any Query! Send us a message.</h3>
+            <div class="space"></div>
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control br-radius-zero" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+
+              <div class="form-action">
+                <button type="submit" class="btn btn-form">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ contact-->
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+            </div>
+            </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              
+            </div>
+            <div class="info-sec">
+              
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connect With Us </h4>
+            </div>
+            
+            <footer class="w3-container w3-padding-32 w3-indigo">
+              <div class="w3-row-padding">
+                <div class="w3-third">
+                  <div class="social-buttons">        
+                                          
+                            <!-- LinkedIn Button -->
+                            <a href="https://www.linkedin.com/in/adupa-vivek-a9b9401b0/" class="social-margin" target="blank">
+                              <div class="social-icon linkedin">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                              </div> 
+                            </a>
+                            <!-- instagram Button -->
+                            <a href="https://www.instagram.com/adupa2127/" target="blank"  class="social-margin">
+                              <div class="social-icon instagram">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                              </div>
+                            </a>
+                          <!-- Github Button -->
+                            <a href="https://github.com/2003A52127/monkeypox"  target="blank"  class="social-margin">
+                              <div class="social-icon github">
+                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                              </div>
+                            </a>
+                            
+                             <!-- Twitter Button -->
+                             <a href="https://twitter.com/AdupaVivek/status/1707999361995841815?s=20"  target="blank"  class="social-margin">
+                              <div class="social-icon twitter">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                              </div>
+                            </a> 
+                    </div>
+                </div>
+                </p>
+                </div>
+              </div>
+            </footer>
+            
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © All Copyright Reserved.
+            <div class="credits">
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ footer-->
+
+  <script>
+    let slideIndex = 0;
+    let timeoutId = null;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dot");
+    
+    showSlides();
+    function currentSlide(index) {
+         slideIndex = index;
+         showSlides();
+    }
+   function plusSlides(step) {
+      
+      if(step < 0) {
+          slideIndex -= 2;
+          
+          if(slideIndex < 0) {
+            slideIndex = slides.length - 1;
+          }
+      }
+      
+      showSlides();
+   }
+    function showSlides() {
+      for(let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        dots[i].classList.remove('active');
+      }
+      slideIndex++;
+      if(slideIndex > slides.length) {
+        slideIndex = 1
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add('active');
+       if(timeoutId) {
+          clearTimeout(timeoutId);
+       }
+      timeoutId = setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+  </script>
+</body>
+
+</html>
