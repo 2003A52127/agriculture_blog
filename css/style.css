@@ -654,3 +654,73 @@ footer
         font-size: 24px;
     }
 }
+/* Small Screen Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .banner-text h1 {
+        font-size: 24px;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .more-features-box-text-description {
+        margin-left: 0px;
+    }
+
+    .team-member {
+        flex-basis: 50%;
+    }
+
+    .caption h3 {
+        font-size: 14px;
+    }
+
+    .caption p {
+        font-size: 12px;
+    }
+
+    .banner-text h1 {
+        font-size: 24px;
+    }
+
+    .icon-play {
+        margin-top: 20px;
+    }
+
+    .mission-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .layer a {
+        line-height: 50px;
+    }
+
+    .form-control {
+        height: 35px;
+    }
+
+    .quick-info li i,
+    .social-icon li {
+        font-size: 14px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .quick-info li a {
+        font-size: 12px;
+    }
+}
